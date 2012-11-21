@@ -109,4 +109,12 @@ body {
 }
 .code {
 	font-family: 'Source Code Pro';
+    font-size: 18px;
+    background: #d4d4d4;
+    padding: 10px;
+    margin: 10px;
+}
+
+.clear {
+    clear: both;
 }

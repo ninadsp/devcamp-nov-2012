@@ -32,10 +32,44 @@
 			<div id="chrome-intro" class="step" data-x="-1000" data-y="-500">
 				<h1>Chrome extensions</h1>
 				<h2>What is in the box?</h2>
+				
+				<div class="container">
+					<ul>
+						<li>manifest.json</li>
+						<li>assets</li>
+					</ul>
+				</div>
 			</div>
 
 			<div id="chrome-2" class="step" data-x="0" data-y="-500">
 				<h1>Hello world!</h1>
+
+				<div class="container">
+					<p class="filename">manifest.json</p>
+					<pre class="code">
+{
+	"name": "Hello World",
+	"version": "0.1",
+	"manifest_version": 2,
+	"description": "Time to learn extensions",
+	"browser_action" : {
+		"default_popup": "hello.html"
+	}
+}</pre>
+
+					<div class="clear">&nbsp;</div>
+
+					<p class="filename">hello.html</p>
+					<pre class="code">
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Hello World&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;h2&gt;Hello World&lt;/h2&gt;
+	&lt;/body&gt;
+&lt;html&gt;</pre>
+				</div>
 			</div>
 
 			<div id="chrome-3" class="step" data-x="1000" data-y="-500">
