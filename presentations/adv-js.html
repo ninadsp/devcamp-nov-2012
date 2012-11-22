@@ -14,7 +14,8 @@
 		<div id="impress">
 
 			<div id="one" class="step" data-x="-1000" data-y="-1500">
-				<h1>There's always more to learn</h1>
+				<h1>Wait! Why are we doing this again?</h1>
+				<h2>There's always more to learn...</h2>
 
 				<div class="container">
 					<ul>
@@ -39,48 +40,189 @@
 			<div id="proto-one" class="step" data-x="-1000" data-y="-500">
 				<h1>Prototype</h1>
 				<h2>What is it?</h2>
+
+				<div class="container">
+					<p class="bottom-padding">An internal property of every JavaScript object, which :</p>
+					<ul>
+						<li>defines the inheriting (or prototype chain) of methods and properties</li>
+						<li>can be used to add methods and properties to objects, <em>after they have been defined</em></li>
+					</ul>
+				</div>
 			</div>
 
 			<div id="proto-two" class="step" data-x="0" data-y="-500">
 				<h1>Basic prototype example</h1>
+
+				<div class="container">
+					<pre class="code">
+var phone = { number: "123456", owner: "abcd"};
+
+var mobilePhone = { imei: "12457890"};
+mobilePhone.__proto__ = phone;
+
+console.log(phone.number);
+console.log(mobilePhone.imei);
+console.log(mobilePhone.number);</pre>
+
+					<div class="clear">&nbsp;</div>
+<pre class="code">
+function foo() {
+	this.bar = "lorem ipsum";
+	this.baz = function(){
+		console.log("this is foo.baz");
+	}
+}
+foo.prototype.yada = function() {
+	console.log("this is foo.yada");
+};
+foo.prototype.blah = "blah";
+</pre>
+				</div>
 			</div>
 
 			<div id="proto-three" class="step" data-x="1000" data-y="-500">
-				<h1>String.trim(), Date.print()</h1>
+				<h1>String.trim(), Date.getMonthName()</h1>
+
+				<div class="container">
+
+					<p class="filename"><a href="http://stackoverflow.com/a/498995" target="_blank">String.trim()</a></p>
+					<pre class="code">
+String.prototype.trim = function(){ return this.replace(/^\s\s*/, '').replace(/\s\s*$/, ''); };
+
+String.prototype.ltrim = function(){ return this.replace(/^\s+/,''); };
+
+String.prototype.rtrim = function(){ return this.replace(/\s+$/,''); };</pre>
+
+					<div class="clear">&nbsp;</div>
+
+					<p class="filename"><a href="http://stackoverflow.com/a/1643516" target="_blank">Date.getMonthName()</a></p>
+					<pre class="code">
+Date.prototype.getMonthName = function(lang) {
+    lang = lang && (lang in Date.locale) ? lang : 'en';
+    return Date.locale[lang].month_names[this.getMonth()];
+};
+
+Date.prototype.getMonthNameShort = function(lang) {
+    lang = lang && (lang in Date.locale) ? lang : 'en';
+    return Date.locale[lang].month_names_short[this.getMonth()];
+};
+
+Date.locale = {
+    en: {
+       month_names: ['January', 'February', 'March', 'April', 
+       'May', 'June', 'July', 'August', 'September', 'October',
+        'November', 'December'],
+       month_names_short: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 
+       'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    }
+};</pre>
+				</div>
 			</div>
 
 			<div id="closure-one" class="step" data-x="-1000" data-y="500">
 				<h1>Closure</h1>
 				<h2>What is it?</h2>
+				<div class="container">
+					<p class="filename"><a href="http://en.wikipedia.org/wiki/Closure_(Computer_Science)#Example" target="_blank">Python</a></p>
+					<pre class="code">
+def counter():
+    x = 0
+    def increment(y):
+        nonlocal x
+        x += y
+        print(x)
+    return increment</pre>
+
+    				<div class="clear">&nbsp;</div>
+
+    				<p class="filename">Usage</p>
+    				<pre class="code">
+counter1_increment = counter()
+counter2_increment = counter()</pre>
+
+    				<div class="clear">&nbsp;</div>
+    				<p class="filename">Output</p>
+    				<pre class="code">
+counter1_increment(1)    # prints 1
+counter1_increment(7)    # prints 8
+counter2_increment(1)    # prints 1
+counter1_increment(1)    # prints 9</pre>
+				</div>
 			</div>
 
 			<div id="closure-two" class="step" data-x="0" data-y="500">
-				<h1></h1>
+				<h1>Closure</h1>
+				<div class="container">
+					<pre class="code">
+var myroot = typeof myroot === 'undefined' ? {} : myroot;
+
+myroot.features = (function(){
+	
+	var foo = "abc";
+	var bar = 123;
+
+	var baz = function(){
+		console.log("this is myroot.features.baz");
+	};
+
+	var fun1 = function(x){
+		console.log("this is myroot.features.fun1 | " + x);
+	};
+
+	var fun2 = function(){
+		console.log("this is myroot.features.fun2 | " + foo);
+	};
+
+	return {
+		baz: baz,
+		print_x: fun1,
+		print_foo: fun2
+	}
+}())</pre>
+				</div>
 			</div>
 
 			<div id="oo-one" class="step" data-x="-1000" data-y="1500">
+				<h1>Object Orientation</h1>
 				<div class="container">
 					<ul>
 						<li>Prototype for inheritance</li>
-						<li>Closure for encapsulation</li>
+						<li>Closure for hiding data</li>
 						<li>Polymorphism ???</li>
 					</ul>
 				</div>
 			</div>
 
 			<div id="oo-two" class="step" data-x="0" data-y="1500">
-				<h1>Compute class hierarchy</h1>
+				<h1>How to create a class hierarchy</h1>
+				<h2>Let's prototype phones</h2>
 				<div class="container">
-					<!-- Show an actual class hierarchy 
-					computer
-					desktop
-					server
-					mobile
-					-->
+					<pre class="code">
+function Phone() {
+	this.number = "123456";
+	this.owner = "abcd";
+};
+
+var myphone = new Phone();
+console.log(myphone);
+
+function mobilePhone() {
+	this.imei = "1234567890";
+};
+
+mobilePhone.prototype = new Phone();
+
+var mymobile = new mobilePhone();
+console.log(mymobile);
+console.log(mymobile.owner);
+
+function satellitePhone() {
+	// These guys have a private key to access the satellite feed
+};</pre>
 				</div>
 			</div>
 
-			<div id="overview" class="step" data-x="500" data-y="-900" data-scale="3"></div>
+			<div id="overview" class="step" data-x="00" data-y="-100" data-scale="5"></div>
 
 		</div>
 

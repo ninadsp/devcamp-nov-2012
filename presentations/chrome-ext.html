@@ -15,6 +15,7 @@
 
 			<div id="beyond-webpages" class="step" data-x="-1000" data-y="-1500">
 				<h1>JS Beyond the Web</h1>
+				<h2>ECMAScript</h2>
 
 				<div class="container">
 					<ul>
@@ -36,7 +37,14 @@
 				<div class="container">
 					<ul>
 						<li>manifest.json</li>
-						<li>assets</li>
+						<li>assets
+							<ul id="second-level">
+								<li>html</li>
+								<li>js</li>
+								<li>css</li>
+								<li>png | jpg | gif</li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -53,6 +61,7 @@
 	"manifest_version": 2,
 	"description": "Time to learn extensions",
 	"browser_action" : {
+		"default_icon": "icon.jpg",
 		"default_popup": "hello.html"
 	}
 }</pre>
@@ -74,10 +83,33 @@
 
 			<div id="chrome-3" class="step" data-x="1000" data-y="-500">
 				<h1>Time to dig deeper</h1>
+
+				<div class="container">
+					<p class="large center bottom-padding"><a href="http://developer.chrome.com/extensions/" target="_blank">http://developer.chrome.com/extensions/</a></p>
+
+					<ul>
+						<li>Browser action v/s Page action</li>
+						<li>Extensions v/s packaged apps</li>
+						<li>Content scripts</li>
+						<li>chrome.* APIs</li>
+						<li>Packaging</li>
+					</ul>
+				</div>
 			</div>
 
 			<div id="chrome-4" class="step" data-x="2000" data-y="-500">
 				<h1>A real life extension</h1>
+				<h2><a href="http://developer.chrome.com/extensions/examples/api/downloads/download_links.zip" target="_blank">Download selected links</a></h2>
+
+				<div class="container">
+					<ul>
+						<li>Open pop-up</li>
+						<li>Read all links on the current page</li>
+						<li>Populate a table on the pop-up</li>
+						<li>Let the user choose links to download</li>
+						<li>Tell Chrome to download all the links</li>
+					</ul>
+				</div>
 			</div>
 
 			<div id="overview" class="step" data-x="500" data-y="-900" data-scale="3"></div>

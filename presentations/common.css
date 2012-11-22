@@ -48,14 +48,7 @@ table {
 /* Styles start here */
 
 body {
-/*	background: #aeaeae ;
-	background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
-    background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:     -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    */
+    font-size: 15px;
 }
 
 .fallback-message {
@@ -63,6 +56,9 @@ body {
 	margin: 10px auto;
 }
 
+a {
+    color: black;
+}
 .impress-supported .fallback-message {
 	display: none;
 }
@@ -85,7 +81,7 @@ body {
     -o-transition:      opacity 1s;
     transition:         opacity 1s;
     font-family: 'Inder', sans-serif;
-    font-size: 20px;
+    /*font-size: 20px;*/
 }
 
 .impress-enabled .step.active {
@@ -94,12 +90,12 @@ body {
 
 .step h1 {
 	text-align: center;
-	font-size: 60px;
+	font-size: 4em;
 	margin-top: 20px;
 }
 
 .step h2 {
-	font-size: 30px;
+	font-size: 2em;
 	margin-top: 15px;
 	text-align: center;
 }
@@ -107,10 +103,26 @@ body {
 .step .container {
 	padding: 50px;
 }
+
+.step .container p {
+    font-size: 2.5em;
+}
+
+.step .container ul li {
+    font-size: 2em;
+    list-style-type: disc;
+    line-height: 50px;
+}
+
+.step .container ol li {
+    font-size: 2em;
+    list-style-type: lower-roman;
+    line-height: 3em;
+}
 .code {
 	font-family: 'Source Code Pro';
-    font-size: 18px;
-    background: #d4d4d4;
+    font-size: 1.2em;
+    background: #f3f3f3;
     padding: 10px;
     margin: 10px;
 }
@@ -118,3 +130,34 @@ body {
 .clear {
     clear: both;
 }
+
+.large {
+    font-size: 3em;
+}
+
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#second-level {
+    padding-left: 20px;
+    list-style-type: circle;
+    font-size: 0.5em;
+}
+
+em {
+    font-style: italic;
+}
+
+.bottom-padding {
+    padding-bottom: 30px;
+}
+
+#overview { 
+    display: none;
+}
+
+/* hack for the chrome bug where elements are no longer clickable */
+.impress-enabled          { pointer-events: none }
+.impress-enabled #impress { pointer-events: auto }
