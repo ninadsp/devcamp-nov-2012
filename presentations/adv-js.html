@@ -87,11 +87,9 @@ foo.prototype.blah = "blah";
 
 					<p class="filename"><a href="http://stackoverflow.com/a/498995" target="_blank">String.trim()</a></p>
 					<pre class="code">
-String.prototype.trim = function(){ return this.replace(/^\s\s*/, '').replace(/\s\s*$/, ''); };
-
-String.prototype.ltrim = function(){ return this.replace(/^\s+/,''); };
-
-String.prototype.rtrim = function(){ return this.replace(/\s+$/,''); };</pre>
+String.prototype.trim = function(){ return this
+.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+};</pre>
 
 					<div class="clear">&nbsp;</div>
 
@@ -102,18 +100,11 @@ Date.prototype.getMonthName = function(lang) {
     return Date.locale[lang].month_names[this.getMonth()];
 };
 
-Date.prototype.getMonthNameShort = function(lang) {
-    lang = lang && (lang in Date.locale) ? lang : 'en';
-    return Date.locale[lang].month_names_short[this.getMonth()];
-};
-
 Date.locale = {
     en: {
-       month_names: ['January', 'February', 'March', 'April', 
-       'May', 'June', 'July', 'August', 'September', 'October',
-        'November', 'December'],
-       month_names_short: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 
-       'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+       month_names: ['January', 'February', 'March', 
+       'April', 'May', 'June', 'July', 'August',
+        'September', 'October', 'November', 'December']
     }
 };</pre>
 				</div>
